@@ -11,6 +11,8 @@ You can use the following command to create the necessary table:
 CREATE TABLE speeds (id INTEGER PRIMARY KEY, direction TEXT, speed INT, timestamp DATETIME);
 ```
 
+## Scheduling deployments
+Follow the instructions [here](https://orion-docs.prefect.io/concepts/schedules/) to schedule your deployment.
 ## Using the S3 Task with Prefect
 Prefect provide a simple S3 API which you can read about [here](https://prefecthq.github.io/prefect-aws/). You can also use [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-examples.html) to perform your S3 uploads if you would prefer.
 
