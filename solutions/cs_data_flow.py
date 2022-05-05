@@ -69,15 +69,18 @@ def speed_by_direction(results: List[Dict]):
     return speed_by_dir
 
 
-@task(name="Save raw result")
+@task(name="Save raw results to s3")
 def save_raw_results(results: List[Dict]):
     access_key_id = os.getenv("ACCESS_KEY_ID")
     access_key_secret = os.getenv("KEY_SECRET")
+
     key = "cs-api-" + results[0]["datetimerecorded"] + ".txt"
+
     session = boto3.Session(
         aws_access_key_id=access_key_id,
         aws_secret_access_key=access_key_secret
     )
+
     s3 = session.resource('s3')
     object = s3.Object("c1-de-demo-bucket", key)
     object.put(Body=json.dumps(results))
