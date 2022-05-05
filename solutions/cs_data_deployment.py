@@ -1,4 +1,3 @@
-from unittest import runner
 from prefect.deployments import DeploymentSpec, SubprocessFlowRunner
 from prefect.orion.schemas.schedules import IntervalSchedule
 from datetime import timedelta

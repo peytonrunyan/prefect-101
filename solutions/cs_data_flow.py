@@ -1,9 +1,6 @@
 import sqlite3
 from typing import *
-from unittest import result
 from prefect import flow, task
-from prefect.task_runners import DaskTaskRunner
-from logging import getLogger
 import pandas as pd
 from sodapy import Socrata
 import os
